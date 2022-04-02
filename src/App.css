@@ -3,3 +3,8 @@
   height: 100%;
   background-color: #FFFFFF;
 }
+
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('./assets/fonts/plus_jakarta_sans/PlusJakartaSans-Regular.ttf');
+}

@@ -14,6 +14,7 @@ const theme = createTheme({
         },
     },
     typography: {
+        fontFamily: 'PlusJakartaSans',
         button: {
             textTransform: 'initial',
         }

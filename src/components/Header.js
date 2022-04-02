@@ -35,7 +35,7 @@ const Header = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                        sx={{ display: { xs: 'none', md: 'flex' } }}
                     >
                         <Image src={LogoImage} />
                     </Typography>
