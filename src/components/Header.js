@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { 
     AppBar,
     Avatar,
@@ -19,45 +19,54 @@ import LogoImage from '../assets/images/Tallyup.svg';
 const Image = styled('img')({
     width: '100%'
 })
-
 const Header = () => {
-  const onContact = () => {
 
-  }
+    const theme = useTheme();
 
-  return (
-    <AppBar position="static">
-        <Container maxWidth="xl">
-            <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                >
-                    <Image src={LogoImage} />
-                </Typography>
+    const onContact = () => {
 
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                    <Button
-                        onClick={onContact}
-                    >Contact</Button>
-                </Box>
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                >
-                    <Image src={LogoImage} />
-                </Typography>
+    }
 
-                <Box sx={{ flexGrow: 0 }}>
-                    <Button onClick={onContact} variant="outlined">Contact</Button>
-                </Box>
-            </Toolbar>
-        </Container>
-    </AppBar>
-  );
+    return (
+        <AppBar position="static" sx={{ bgcolor: theme.palette.background.default }}>
+            <Container maxWidth="xl">
+                <Toolbar disableGutters sx={{ justifyContent: 'space-between', py:3, px:4.5 }}>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+                    >
+                        <Image src={LogoImage} />
+                    </Typography>
+
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <Button
+                            onClick={onContact}
+                        >Contact</Button>
+                    </Box>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                    >
+                        <Image src={LogoImage} />
+                    </Typography>
+
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Button 
+                            onClick={onContact} 
+                            variant="outlined"
+                            sx={{ 
+                                color: theme.palette.common.black,
+                                borderColor: theme.palette.common.black
+                            }}
+                        >Contact</Button>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </AppBar>
+    );
 };
 export default Header;
