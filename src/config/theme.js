@@ -14,8 +14,21 @@ const theme = createTheme({
         },
     },
     typography: {
+        color: '#18181B',
         fontFamily: 'PlusJakartaSans',
+        // fontSize: 18,
+
+        h1: {
+            color: '#18181B',
+            fontSize: 36,
+            fontFamily: 'PlusJakartaSansExtraBold'
+        },
         button: {
+            fontSize: 16,
+            paddingTop: '16px !important',
+            paddingBottom: '16px !important',
+            paddingLeft: '40px !important',
+            paddingRight: '40px !important',
             textTransform: 'initial',
         }
     }

@@ -2,9 +2,25 @@
   min-height: 100vh;
   height: 100%;
   background-color: #FFFFFF;
+  text-align: center;
 }
 
 @font-face {
   font-family: 'PlusJakartaSans';
   src: url('./assets/fonts/plus_jakarta_sans/PlusJakartaSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'PlusJakartaSansMedium';
+  src: url('./assets/fonts/plus_jakarta_sans/PlusJakartaSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'PlusJakartaSansBold';
+  src: url('./assets/fonts/plus_jakarta_sans/PlusJakartaSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'PlusJakartaSansExtraBold';
+  src: url('./assets/fonts/plus_jakarta_sans/PlusJakartaSans-ExtraBold.ttf');
 }
