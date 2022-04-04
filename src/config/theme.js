@@ -25,10 +25,6 @@ const theme = createTheme({
         },
         button: {
             fontSize: 16,
-            paddingTop: '16px !important',
-            paddingBottom: '16px !important',
-            paddingLeft: '40px !important',
-            paddingRight: '40px !important',
             textTransform: 'initial',
         }
     }

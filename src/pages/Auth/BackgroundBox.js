@@ -28,7 +28,9 @@ export default function BackgroundBox () {
                 <Button variant="outlined"
                     sx={{ 
                         borderColor: theme.palette.background.default,
-                        color: theme.palette.background.default
+                        color: theme.palette.background.default,
+                        py: 1.5,
+                        px: 5
                     }}
                 >Contact</Button>
             </Stack>

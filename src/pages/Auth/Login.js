@@ -51,12 +51,18 @@ export default function Login () {
                             </Typography>
                         </FormControl>
                         <FormControl>
-                            <Button variant="contained" sx={{ bgcolor: theme.palette.common.black }}>Log In</Button>
+                            <Button 
+                                variant="contained" 
+                                sx={{ 
+                                    bgcolor: theme.palette.common.black,
+                                    fontFamily: 'PlusJakartaSansExtraBold' 
+                                }}
+                            >Log In</Button>
                         </FormControl>
                         <Typography textAlign="center" color="#52525B">
                             Don't have an account? 
                             <Link 
-                                to="signup" 
+                                to="/signup" 
                                 style={{ 
                                     textDecoration: 'none', 
                                     color: '#000000', 
