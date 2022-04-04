@@ -1,7 +1,8 @@
 import BackgroundImage from '../../assets/images/dark-bg.png';
-import { Box, Button, Stack } from '@mui/material';
+import { Box, Button, Stack, Typography, CardHeader, Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
+import Avatar1Image from '../../assets/images/avatar/avatar1.png';
 
 const boxStyle = {
     flex: 1,
@@ -34,6 +35,50 @@ export default function BackgroundBox () {
                     }}
                 >Contact</Button>
             </Stack>
+            <Box pt={65}></Box>
+            <Box
+                borderRadius={3}
+                bgcolor="#262133"
+                px={8}
+                py={6}
+                maxWidth={500}
+                m="auto"
+            >
+                <Typography 
+                    fontSize={20}
+                    fontFamily="PlusJakartaSansMedium"
+                    color="#FFFFFF"
+                >
+                    "Tallyup is very easy and convenient to use.<br />
+                    Set up your crypto profiles and wallets in seconds! 
+                    One of the best NFT portfolio tracker today!"
+                </Typography>
+                <CardHeader
+                    avatar={
+                        <Avatar sx={{ mr: 0 }} src={Avatar1Image} aria-label="recipe" />
+                    }
+                    title={
+                        <Typography 
+                            color="#FFFFFF"
+                            fontFamily="PlusJakartaSansBold"
+                            fontSize={18}
+                            textAlign="left"
+                        >Anna River</Typography>
+                    }
+                    subheader={
+                        <Typography
+                            color="#888888"
+                            fontSize={15}
+                            textAlign="left"
+                        >Crypto Investor</Typography>
+                    }
+                    sx={{
+                        pt: 3.5,
+                        maxWidth: 200,
+                        m: 'auto',
+                    }}
+                />
+            </Box>
         </Box>
     );
 }

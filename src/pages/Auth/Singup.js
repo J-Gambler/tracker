@@ -68,6 +68,7 @@ export default function Signup () {
                                 variant="contained"
                                 sx={{ 
                                     bgcolor: theme.palette.common.black,
+                                    py: 2,
                                     fontFamily: 'PlusJakartaSansExtraBold' 
                                 }}
                             >Create Account</Button>

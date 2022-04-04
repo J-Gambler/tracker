@@ -55,6 +55,7 @@ export default function Login () {
                                 variant="contained" 
                                 sx={{ 
                                     bgcolor: theme.palette.common.black,
+                                    py: 2,
                                     fontFamily: 'PlusJakartaSansExtraBold' 
                                 }}
                             >Log In</Button>
