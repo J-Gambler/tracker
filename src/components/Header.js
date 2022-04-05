@@ -28,7 +28,12 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="static" sx={{ bgcolor: theme.palette.background.default }}>
+        <AppBar position="static" 
+            sx={{ 
+                bgcolor: theme.palette.background.default,
+                boxShadow: 'none'
+            }}
+        >
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ justifyContent: 'space-between', py:3, px:4.5 }}>
                     <Typography
