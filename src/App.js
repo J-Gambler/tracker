@@ -18,7 +18,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
           </Routes>
           <Header />
-          <Box pt={16} px={7.5}>
+          <Box pt={4} px={7.5}>
             <Routes>
               <Route path="/profiles" element={<ProfilesPage />} />
             </Routes>

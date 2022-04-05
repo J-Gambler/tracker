@@ -23,6 +23,11 @@ const theme = createTheme({
             fontSize: 36,
             fontFamily: 'PlusJakartaSansExtraBold'
         },
+        h2: {
+            color: '#18181B',
+            fontSize: 30,
+            fontFamily: 'PlusJakartaSansBold'
+        },
         button: {
             fontSize: 16,
             textTransform: 'initial',
@@ -30,5 +35,5 @@ const theme = createTheme({
     }
 })
 
-export default responsiveFontSizes(theme);
+export default responsiveFontSizes(createTheme(theme));
 

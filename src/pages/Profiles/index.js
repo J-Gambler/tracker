@@ -7,12 +7,12 @@ export default function ProfilesPage () {
     const theme = useTheme();
     return (
         <Stack 
-            borderRadius={16} 
+            borderRadius={2} 
             bgcolor={theme.palette.common.white}
             flexDirection="row"
         >
             <Profiles />
-            <Divider />
+            <Divider orientation="vertical" flexItem />
             <Wallets />
         </Stack>
     );
