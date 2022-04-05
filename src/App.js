@@ -1,8 +1,9 @@
 import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
+import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Profiles from './pages/Profiles';
+import ProfilesPage from './pages/Profiles';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Singup';
 import customTheme from './config/theme';
@@ -12,12 +13,16 @@ function App() {
     <ThemeProvider theme={customTheme}>
       <div className="App">
         <BrowserRouter>
-          {/* <Header /> */}
           <Routes>
-            <Route path="/profiles" element={<Profiles />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Routes>
+          <Header />
+          <Box pt={16} px={7.5}>
+            <Routes>
+              <Route path="/profiles" element={<ProfilesPage />} />
+            </Routes>
+          </Box>
         </BrowserRouter>
       </div>
     </ThemeProvider>
