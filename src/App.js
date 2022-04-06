@@ -8,6 +8,7 @@ import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Singup';
 import customTheme from './config/theme';
 import Profile from './pages/Profile';
+import Welcome from './pages/Welcome';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Header />
           <Box pt={4} px={7.5}>
             <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/welcome" element={<Welcome />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/profiles" element={<ProfilesPage />} />
             </Routes>
