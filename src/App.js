@@ -1,7 +1,7 @@
 import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import ProfilesPage from './pages/Profiles';
 import Login from './pages/Auth/Login';
@@ -16,22 +16,38 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/auth">
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+            </Route>
+            <Route path="/" element={<Main />}>
+              <Route index element={<Welcome />} />
+              <Route path="/main" element={<Container />}>
+                <Route path="profile" element={<Profile />} />
+                <Route path="profiles" element={<ProfilesPage />} />
+              </Route>
+            </Route>
           </Routes>
-          <Header />
-          <Box pt={4} px={7.5}>
-            <Routes>
-              <Route path="/" element={<Welcome />} />
-              <Route path="/welcome" element={<Welcome />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/profiles" element={<ProfilesPage />} />
-            </Routes>
-          </Box>
         </BrowserRouter>
       </div>
     </ThemeProvider>
   );
 }
 
+function Main () {
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+}
+
+function Container () {
+  return (
+    <Box pt={4} px={7.5}>
+      <Outlet />
+    </Box>
+  );
+}
 export default App;
