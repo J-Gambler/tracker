@@ -2,18 +2,13 @@ import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import { 
     AppBar,
-    Avatar,
     Box,
     Button,
     Container,
     Toolbar,
-    IconButton,
-    Menu,
-    MenuItem,
     Typography,
-    Tooltip,
+    useMediaQuery
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import LogoImage from '../assets/images/Tallyup.svg';
 
 const Image = styled('img')({
@@ -22,6 +17,7 @@ const Image = styled('img')({
 const Header = () => {
 
     const theme = useTheme();
+    const matchesUpMd = useMediaQuery(theme.breakpoints.up('md'));
 
     const onContact = () => {
 
@@ -40,30 +36,43 @@ const Header = () => {
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', md: 'flex' } }}
+                        // sx={{ display: { xs: 'none', md: 'flex' } }}
                     >
-                        <Image src={LogoImage} />
+                        <Image src={LogoImage}
+                            sx={{
+                                width: matchesUpMd ? 150 : 110,
+                            }}
+                        />
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <Button
                             onClick={onContact}
                         >Contact</Button>
-                    </Box>
-                    <Typography
+                    </Box> */}
+                    {/* <Typography
                         variant="h6"
                         noWrap
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        <Image src={LogoImage} />
-                    </Typography>
+                        <Image src={LogoImage} 
+                            sx={{
+                                width: matchesUpMd ? 150 : 110,
+                            }}
+                        />
+                    </Typography> */}
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box 
+                        // sx={{ 
+                            // flex: 1, 
+                            // display: { xs: 'none', md: 'flex' } 
+                        // }}
+                    >
                         <Button 
                             onClick={onContact} 
                             variant="outlined"
-                            color="secondary"
+                            // color="secondary"
                         >Contact</Button>
                     </Box>
                 </Toolbar>
