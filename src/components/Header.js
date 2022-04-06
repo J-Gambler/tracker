@@ -63,10 +63,7 @@ const Header = () => {
                         <Button 
                             onClick={onContact} 
                             variant="outlined"
-                            sx={{ 
-                                color: theme.palette.common.black,
-                                borderColor: theme.palette.common.black
-                            }}
+                            color="secondary"
                         >Contact</Button>
                     </Box>
                 </Toolbar>

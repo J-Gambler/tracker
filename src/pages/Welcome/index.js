@@ -22,10 +22,10 @@ export default function Welcome () {
                 backgroundPosition: 'top center'
             }}
         >
-            {/* <WelcomeModal 
+            <WelcomeModal 
                 open={open} 
                 handleClose={handleClose} 
-            /> */}
+            />
             
             {/* <SignupModal 
                 open={open} 

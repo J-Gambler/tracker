@@ -19,7 +19,7 @@ function TabPanel(props) {
         >
         {value === index && (
             <Box>
-            <Typography>{children}</Typography>
+                {children}
             </Box>
         )}
         </div>
@@ -113,7 +113,7 @@ export default function Profile () {
                 <TabPanel value={value} index={0} >
                     <Stack flexDirection="row" pt={4} gap={6} justifyContent="space-between">
                     {nfts.map((e, k) => 
-                        <NftCard />
+                        <NftCard key={k} />
                     ) }
                     </Stack>
                 </TabPanel>

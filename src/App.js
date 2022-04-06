@@ -12,6 +12,8 @@ import Profile from './pages/Profile';
 import Welcome from './pages/Welcome';
 
 function App() {
+  console.log(customTheme);
+  
   return (
     <ThemeProvider theme={customTheme}>
       <div className="App">

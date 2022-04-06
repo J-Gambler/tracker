@@ -24,7 +24,7 @@ const style = {
     // boxShadow: 24,
     borderRadius: 7,
     p: 5,
-    '& p': {
+    '& p, h1, h6': {
         textAlign: 'center',
     }
 };
@@ -49,11 +49,11 @@ export default function WelcomeModal({ open, handleClose }) {
                     <Avatar sx={{ width: 120, height: 120 }} src={HandImage} />
                 </Stack>
                 <Stack gap={2}>
-                    <Typography>Hey, welcome to Tallyup!</Typography>
-                    <Typography>A simple tool to help you make sense of your NFT and ETH transactions.</Typography>
+                    <Typography variant="h1">Hey, welcome to Tallyup!</Typography>
+                    <Typography variant="body1">A simple tool to help you make sense of your NFT and ETH transactions.</Typography>
                 </Stack>
                 <Box sx={{ pt: 4, pb: 5 }}>
-                    <Typography>We make it easy for you to:</Typography>
+                    <Typography variant="subtitle1">We make it easy for you to:</Typography>
                     <List 
                         sx={{
                             pb: 4,
@@ -65,21 +65,30 @@ export default function WelcomeModal({ open, handleClose }) {
                             <ListItemAvatar>
                                 <Avatar src={HandPointerImage} />
                             </ListItemAvatar>
-                            <ListItemText primary={element}></ListItemText>
+                            <ListItemText 
+                                primary={
+                                    <Typography 
+                                        variant="body1"
+                                        sx={{
+                                            textAlign: 'left !important'
+                                        }}
+                                    >{element}
+                                    </Typography>
+                                }></ListItemText>
                         </ListItem>
                         )}
                     </List>
-                    <Typography sx={{ fontFamily: 'PlusJakartaSansBold' }}>And, that's just the beginning... Getting started is easy (and free)!</Typography>
+                    <Typography variant="subtitle2">And, that's just the beginning... Getting started is easy (and free)!</Typography>
                 </Box>
                 <Stack alignItems="center">
-                    <Button
-                        sx={{
-                            px: 6,
-                            py: 2,
-                            bgcolor: theme.palette.common.black,
-                            color: theme.palette.common.white,
-                            borderRadius: 2
-                        }}
+                    <Button variant="contained" color="primary"
+                        // sx={{
+                        //     px: 6,
+                        //     py: 2,
+                        //     bgcolor: theme.palette.common.black,
+                        //     color: theme.palette.common.white,
+                        //     borderRadius: 2
+                        // }}
                     >Get Started</Button>
                 </Stack>
             </Box>

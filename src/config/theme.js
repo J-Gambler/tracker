@@ -4,6 +4,20 @@ const theme = createTheme({
     root: {
         backgroundColor: '#FFFFFF',
     },
+    palette: {
+        // mode: 'dark',
+        primary: {
+            main: '#000',
+            dark: '#616161',
+            light: '#bdbdbd',
+        },
+        secondary: {
+            main: '#FFF',
+            dark: '#616161',
+            light: '#bdbdbd',
+            contrastText: '#000',
+        }
+    },
     breakpoints: {
         values: {
             xs: 0,
@@ -20,7 +34,7 @@ const theme = createTheme({
 
         h1: {
             color: '#18181B',
-            fontSize: 36,
+            fontSize: 35,
             fontFamily: 'PlusJakartaSansExtraBold'
         },
         h2: {
@@ -28,9 +42,38 @@ const theme = createTheme({
             fontSize: 30,
             fontFamily: 'PlusJakartaSansBold'
         },
+        subtitle1: {
+            color: '#52525B',
+            fontSize: 20,
+            fontFamily: 'PlusJakartaSansBold',
+        },
+        subtitle2: {
+            color: '#52525B',
+            fontSize: 18,
+            fontFamily: 'PlusJakartaSansBold',
+        },
+        body1: {
+            color: '#52525B',
+            fontSize: 18,
+            fontFamily: 'PlusJakartaSansMedium'
+        },
         button: {
             fontSize: 16,
-            textTransform: 'initial',
+            fontFamily: 'PlusJakartaSansExtraBold',
+            textTransform: 'initial'
+        }
+    },
+    components: {
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    borderRadius: 8,
+                    paddingLeft: 45,
+                    paddingRight: 45,
+                    paddingTop: 16,
+                    paddingBottom: 16
+                }
+            }
         }
     }
 })
