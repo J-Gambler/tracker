@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import ProfilesPage from './pages/Profiles';
 import Login from './pages/Auth/Login';
-import Signup from './pages/Auth/Singup';
+import Signup from './pages/Auth/Signup';
 import customTheme from './config/theme';
 import Profile from './pages/Profile';
 import Welcome from './pages/Welcome';
