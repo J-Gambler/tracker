@@ -28,7 +28,7 @@ const Header = () => {
     }
 
     return (
-        <AppBar position="static" 
+        <AppBar position="fixed" 
             sx={{ 
                 bgcolor: theme.palette.background.default,
                 boxShadow: 'none'

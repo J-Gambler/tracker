@@ -91,6 +91,7 @@ export default function Profile () {
     return (
         <Box
             py={6} 
+            pb={9}
             px={6.5}
             borderRadius={2} 
             bgcolor={theme.palette.common.white}

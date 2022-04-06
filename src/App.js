@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import ProfilesPage from './pages/Profiles';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
@@ -38,14 +39,17 @@ function Main () {
   return (
     <>
       <Header />
-      <Outlet />
+      <Box pt={12}>
+        <Outlet />
+      </Box>
+      <Footer />
     </>
   );
 }
 
 function Container () {
   return (
-    <Box pt={4} px={7.5}>
+    <Box pt={5} pb={13} px={7.5}>
       <Outlet />
     </Box>
   );
