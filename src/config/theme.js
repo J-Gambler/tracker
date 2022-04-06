@@ -42,6 +42,16 @@ const theme = createTheme({
             fontSize: 30,
             fontFamily: 'PlusJakartaSansBold'
         },
+        h3: {
+            color: '#9DA7B5',
+            fontSize: 30,
+            fontFamily: 'PlusJakartaSansBold'
+        },
+        h4: {
+            color: '#18181B',
+            fontSize: 25,
+            fontFamily: 'PlusJakartaSansBold'
+        },
         subtitle1: {
             color: '#52525B',
             fontSize: 20,
@@ -55,6 +65,16 @@ const theme = createTheme({
         body1: {
             color: '#52525B',
             fontSize: 18,
+            fontFamily: 'PlusJakartaSansMedium'
+        },
+        caption: {
+            color: '#18181B',
+            fontSize: 17,
+            fontFamily: 'PlusJakartaSansExtraBold'
+        },
+        overline: {
+            color: '#9DA7B5',
+            fontSize: 13,
             fontFamily: 'PlusJakartaSansMedium'
         },
         button: {

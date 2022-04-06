@@ -30,13 +30,7 @@ export default function NftCard() {
           }}
         >
             <Stack flexDirection="row" justifyContent="space-between">
-                <Typography
-                  sx={{
-                    fontFamily: 'PlusJakartaSansExtraBold'
-                  }}
-                >
-                  Unbothered Penguin #2145
-                </Typography>
+                <Typography variant="caption">Unbothered Penguin #2145</Typography>
                 <Chip label="Mint" />
             </Stack>
             <Typography>Penguins UItd. #1</Typography>
@@ -46,59 +40,60 @@ export default function NftCard() {
                 pt: 3,
                 '& p': {
                   textTransform: 'uppercase',
+                  fontSize: 16
                 }
               }}
             >
               <Stack>
-                <Typography>Date</Typography>
+                <Typography variant="overline">Date</Typography>
                 <Typography>2021-11-26 02:02:02</Typography>
               </Stack>
               <Stack flexDirection="row" justifyContent="space-between" alignItems="flex-end">
                 <Stack>
-                  <Typography>From</Typography>
+                  <Typography variant="overline">From</Typography>
                   <Typography>0x343adb...e0c1</Typography>
                 </Stack>
                 <ArrowCircleRightOutlinedIcon />
                 <Stack 
                   sx={{ 
-                    '& p': {
-                      textAlign: 'right'
+                    '& p, span': {
+                      textAlign: 'right !important'
                     }
                   }}
                 >
-                  <Typography>To</Typography>
-                  <Typography>1eb0fx54...0xe7</Typography>
+                  <Typography variant="overline">To</Typography>
+                  <Typography sx={{ textTransform: 'lowercase' }}>1eb0fx54...0xe7</Typography>
                 </Stack>
               </Stack>
-              <Stack flexDirection="row">
+              <Stack flexDirection="row" justifyContent="space-between">
                 <Stack>
-                  <Typography>Mint Price</Typography>
+                  <Typography variant="overline">Mint Price</Typography>
                   <Typography>0.25Eth</Typography>
                 </Stack>
                 <Stack
                   sx={{ 
-                    '& p': {
-                      textAlign: 'right'
+                    '& p, span': {
+                      textAlign: 'right !important'
                     }
                   }}
                 >
-                  <Typography>Gas Price</Typography>
+                  <Typography variant="overline">Gas Price</Typography>
                   <Typography>0.02345345Eth</Typography>
                 </Stack>
               </Stack>
               <Stack flexDirection="row" justifyContent="space-between">
                 <Stack>
-                  <Typography>Royalities</Typography>
+                  <Typography variant="overline">Royalities</Typography>
                   <Typography>-</Typography>
                 </Stack>  
                 <Stack
                   sx={{ 
-                    '& p': {
-                      textAlign: 'right'
+                    '& p, span': {
+                      textAlign: 'right !important'
                     }
                   }}
                 >
-                  <Typography>Platform Fees</Typography>
+                  <Typography variant="overline">Platform Fees</Typography>
                   <Typography>-</Typography>
                 </Stack>
               </Stack>
@@ -113,8 +108,8 @@ export default function NftCard() {
             py: 2
           }}
         >
-          <Typography>Total Cost</Typography>
-          <Typography sx={{ textTransform: 'uppercase' }}>0.273432Eth</Typography>
+          <Typography variant="button">Total Cost</Typography>
+          <Typography variant="button">0.273432ETH</Typography>
         </Stack>
     </Card>
   );

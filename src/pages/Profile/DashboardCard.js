@@ -25,8 +25,11 @@ export default function DashboardCard (props) {
                     pt: 3,
                     pb: 2,
                     gap: 3,
-                    '& .MuiCardHeader-avatar' : {
+                    '& .MuiCardHeader-avatar': {
                         mr: 0
+                    },
+                    '& .MuiCardHeader-content span': {
+                        textAlign: 'left'
                     }
                 }}
                 avatar={
@@ -37,22 +40,21 @@ export default function DashboardCard (props) {
                 title={
                     <Typography
                         sx={{
-                            textAlign: 'left',
                             color: '#99999C',
+                            fontSize: 13,
+                            textAlign: 'left !important',
                         }}
                     >{props.title}</Typography>
                 }
                 subheader={
-                    <Typography
+                    <Typography variant="h4"
                         sx={{
-                            fontSize: 25, 
-                            fontFamily: 'PlusJakartaSansBold',
                             textAlign: 'left',
                             pt: 1,
                             color: props.background ? theme.palette.common.white
                                                         : theme.palette.common.black
                         }}
-                    >{props.ether} ETH
+                    >{props.ether} <Typography variant="overline">ETH</Typography>
                     </Typography>
                 }
             />

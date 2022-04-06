@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Typography, Link, Breadcrumbs } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Typography, Breadcrumbs } from '@mui/material';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 export default function PageHeader() {
@@ -15,16 +16,12 @@ export default function PageHeader() {
         aria-label="breadcrumb"
       >
         <Link
-          sx={{ fontSize: 30, fontFamily: 'PlusJakartaSansBold' }}
-          underline="hover"
-          color="inherit"
-          href="/getting-started/installation/"
+          style={{ textDecoration: 'none' }}
+          to="/main/profiles/"
         >
-          Profiles
+          <Typography variant="h3" component="span">Profiles</Typography>
         </Link>
-        <Typography 
-          sx={{ fontSize: 30, fontFamily: 'PlusJakartaSansBold' }}
-          color="text.primary">Zima</Typography>
+        <Typography variant="h2">Zima</Typography>
       </Breadcrumbs>
     </div>
   );
