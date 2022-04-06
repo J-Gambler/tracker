@@ -12,7 +12,7 @@ const boxStyle = {
     backgroundRepeat: 'no-repeat'
 }
 
-export default function BackgroundBox () {
+export default function BackgroundBox ({ href, title }) {
     const theme = useTheme();
 
     return (
@@ -25,7 +25,7 @@ export default function BackgroundBox () {
                 alignItems="center"
                 gap={3}
             >
-                <Link to="login/" style={{ textDecoration: 'none', fontFamily: 'PlusJakartaSans', color: theme.palette.background.default }}>Sign Up</Link>
+                <Link to={href} style={{ textDecoration: 'none', fontFamily: 'PlusJakartaSans', color: theme.palette.background.default }}>{title}</Link>
                 <Button variant="outlined"
                     sx={{ 
                         borderColor: theme.palette.background.default,

@@ -1,8 +1,8 @@
 import LogoImage from '../../assets/images/Tallyup.svg';
 import BackgroundBox from './BackgroundBox';
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import {
-    Stack, Box, Typography, InputBase, InputLabel, FormControl, FormControlLabel, Button, useTheme, TextField
+    Stack, Box, Typography, FormControl, Button, useTheme, TextField
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -76,7 +76,7 @@ export default function Signup () {
                         <Typography textAlign="center" color="#52525B">
                             Already have an account?
                             <Link 
-                                to="/login" 
+                                to="/auth/login" 
                                 style={{ 
                                     textDecoration: 'none', 
                                     color: '#000000', 
@@ -99,7 +99,7 @@ export default function Signup () {
                     }}
                 >BUILT BY @ZIMA16B8F3</Typography>
             </Box>
-            <BackgroundBox />
+            <BackgroundBox href="/auth/login" title="Log in" />
         </Stack>
     );
 }

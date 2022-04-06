@@ -63,7 +63,7 @@ export default function Login () {
                         <Typography textAlign="center" color="#52525B">
                             Don't have an account? 
                             <Link 
-                                to="/signup" 
+                                to="/auth/signup" 
                                 style={{ 
                                     textDecoration: 'none', 
                                     color: '#000000', 
@@ -86,7 +86,7 @@ export default function Login () {
                     }}
                 >BUILT BY @ZIMA16B8F3</Typography>
             </Box>
-            <BackgroundBox />
+            <BackgroundBox href="/auth/signup" title="Sign Up" />
         </Stack>
     );
 }
