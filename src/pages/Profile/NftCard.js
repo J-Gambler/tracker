@@ -1,26 +1,129 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles';
 import {
+  Button,
+  Box,
   Card,
   CardMedia,
   CardContent,
   Chip,
   Divider,
+  Menu,
+  MenuItem,
   Stack,
   Typography,
 } from '@mui/material';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Nft1Image from '../../assets/images/nfts/1.png';
 
+const StyledMenu = styled((props) => (
+  <Menu
+    elevation={0}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'right',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'right',
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  '& .MuiPaper-root': {
+    borderRadius: 6,
+    marginTop: theme.spacing(1),
+    minWidth: 180,
+    color:
+      theme.palette.mode === 'light' ? 'rgb(55, 65, 81)' : theme.palette.grey[300],
+    boxShadow:
+      'rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+    '& .MuiMenu-list': {
+      padding: '4px 0',
+    },
+    '& .MuiMenuItem-root': {
+      '& .MuiSvgIcon-root': {
+        fontSize: 18,
+        color: theme.palette.text.secondary,
+        marginRight: theme.spacing(1.5),
+      },
+      '&:active': {
+        backgroundColor: alpha(
+          theme.palette.primary.main,
+          theme.palette.action.selectedOpacity,
+        ),
+      },
+    },
+  },
+}));
+
 export default function NftCard() {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <Card sx={{ flex: 1, borderRadius: 4 }}>
+    <Card sx={{ flex: 1, borderRadius: 4, position: 'relative' }}>
         <CardMedia
-            component="img"
-            height="250"
-            image={Nft1Image}
-            alt="Paella dish"
+          component="img"
+          height="250"
+          image={Nft1Image}
+          alt="Paella dish"
         />
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 16,
+            right: 12
+          }}
+        >
+          <Chip
+            id="demo-customized-button"
+            aria-controls={open ? 'demo-customized-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            variant="contained"
+            disableelevation="true"
+            clickable
+            onClick={handleClick}
+            label={<MoreHorizIcon sx={{ color: 'background.paper' }} />}
+            sx={{
+              bgcolor: 'transparent'
+            }}
+          />
+          <StyledMenu
+            id="demo-customized-menu"
+            MenuListProps={{
+              'aria-labelledby': 'demo-customized-button',
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            sx={{ 
+              p: 0,
+              '& .MuiMenuItem-root': {
+                py: 0,
+                '& span': {
+                  color: '#18181B'
+                }
+              }
+            }}
+          >
+            <MenuItem onClick={handleClose} disableRipple>
+              <Typography variant="overline">View on Etherscan</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleClose} disableRipple>
+              <Typography variant="overline">View on OpenSea</Typography>
+            </MenuItem>
+          </StyledMenu>
+        </Box>
         <CardContent 
           sx={{ 
             px: 3, 
