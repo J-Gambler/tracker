@@ -1,4 +1,14 @@
-import { Box, Stack, Tabs, Tab, Typography } from '@mui/material';
+import { 
+    Box, 
+    Stack, 
+    Tabs, 
+    Tab, 
+    Typography,
+    ToggleButton,
+    ToggleButtonGroup
+} from '@mui/material';
+import WindowIcon from '@mui/icons-material/Window';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useTheme } from '@mui/material/styles';
 import DashboardCard from "./DashboardCard";
 import PageHeader from "./PageHeader";
@@ -84,10 +94,16 @@ const nfts = [
 export default function Profile () {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
+    const [formats, setFormats] = React.useState('bold');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const handleFormat = (event, newFormats) => {
+        setFormats(newFormats);
+    };
+
     return (
         <Box
             py={6} 
@@ -103,13 +119,34 @@ export default function Profile () {
             )}
             </Stack>
             <Box sx={{ width: '100%', pt: 9 }}>
-                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                <Stack 
+                    flexDirection="row"
+                    justifyContent="space-between"
+                    // alignItems="flex-start"
+                    sx={{ borderBottom: 1, borderColor: 'divider' }}
+                >
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                         {tabs.map( (element, key) => 
                             <Tab label={element.title} {...a11yProps(key)} key={key} />
                         )}
                     </Tabs>
-                </Box>
+                    <ToggleButtonGroup
+                        sx={{
+                            pb: 2,
+                        }}
+                        value={formats}
+                        exclusive
+                        onChange={handleFormat}
+                        aria-label="text formatting"
+                    >
+                        <ToggleButton value="bold" aria-label="bold">
+                            <WindowIcon />
+                        </ToggleButton>
+                        <ToggleButton value="italic" aria-label="italic">
+                            <MenuIcon />
+                        </ToggleButton>
+                    </ToggleButtonGroup>
+                </Stack>
                 <TabPanel value={value} index={0} >
                     <Stack flexDirection="row" pt={4} gap={6} justifyContent="space-between">
                     {nfts.map((e, k) => 
